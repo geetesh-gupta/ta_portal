@@ -5,7 +5,7 @@
 ### Installation:
 Requirements:
 - Python 3.6 runtime
-- Django 2.0.5
+- Django 2.1.2
 - Other dependencies in `requirements.txt`
 
 Procedure:
