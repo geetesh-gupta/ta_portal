@@ -5,9 +5,8 @@
 ### Installation:
 Requirements:
 - Python 3.6 runtime
-- Django 2.0.5
-- Pipenv
-- Other dependencies in `requirements.txt`
+- Django 2.1
+- Other dependencies in `Pipfile`
 
 Procedure:
 - Install [python](https://www.python.org/downloads/) in your environment(pre-installed on Ubuntu).
@@ -15,28 +14,33 @@ Procedure:
     ```
     cd <project_directory_name>     # ta_portal
     ```
-- Setup new virtual environment and install other dependencies using pipenv.
+- Install `pipenv` for dependency management
     ```
-    pipenv install
+    pip install pipenv
     ```
-- Activate the new virtual environment.
+- Use pipenv to install other dependencies from `Pipfile`
     ```
-    pipenv shell
+    pipenv install --dev
     ```
-- Change to `src` directory
+- Copy `.env.example` to `.env`
+    ```
+    cp .env.example .env
+    ```
+- Change to `src` directory and optionally activate virtual environment, if you don't want to activate env, use `pipenv run` to run python scripts
     ```
     cd src
+    source "$(pipenv --venv)"/bin/activate
     ```
 - Make database migrations
     ```
     python manage.py makemigrations --settings=ta_portal.settings
-    python manage.py migrate --settings=ta_portal.settings
+    python manage.py migrate --settings=ta_portal.settings 
     ```
 - Create a superuser
     ```
-    python manage.py createsuperuser --settings=ta_portal.settings
+    python manage.py createsuperuser --settings=ta_portal.settings 
     ```
 - Run development server on localhost
     ```
-    python manage.py runserver --settings=ta_portal.settings
+    python manage.py runserver --settings=ta_portal.settings 
     ```
