@@ -9,8 +9,10 @@ before_install:
   - psql -c "ALTER ROLE tauser WITH CREATEDB;" -U postgres
   - psql -c "GRANT ALL PRIVILEGES ON DATABASE tadb TO tauser;" -U postgres
 install:
-  - pip3 install -r requirements.txt
-  - pip3 install coveralls
+  - pip3 install pipenv
+  - cp .env.example .env
+  - pipenv install
+  - source "$(pipenv --venv)"/bin/activate
 script:
   - cd src
   - flake8 .
