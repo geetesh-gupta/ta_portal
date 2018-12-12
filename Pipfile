@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+coveralls = "*"
+
+[packages]
+django-decouple = "*"
+psycopg2 = "*"
+flake8 = "*"
+xhtml2pdf = "*"
+Django = "*"
+
+[requires]
+python_version = "3.6"

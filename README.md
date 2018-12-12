@@ -6,6 +6,7 @@
 Requirements:
 - Python 3.6 runtime
 - Django 2.0.5
+- Pipenv
 - Other dependencies in `requirements.txt`
 
 Procedure:
@@ -14,15 +15,13 @@ Procedure:
     ```
     cd <project_directory_name>     # ta_portal
     ```
-- Create a new virtual environment and activate it.
+- Setup new virtual environment and install other dependencies using pipenv.
     ```
-    sudo apt-get install -y python3-venv
-    python3 -m venv ta_portal_venv
-    source ta_portal_venv/bin/activate
+    pipenv install
     ```
-- Use pip to install other dependencies from `requirements.txt`
+- Activate the new virtual environment.
     ```
-    pip install -r requirements.txt
+    pipenv shell
     ```
 - Change to `src` directory
     ```
